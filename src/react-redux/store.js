@@ -1,11 +1,9 @@
+import { composeWithDevTools } from '@redux-devtools/extension';
 import { createStore } from 'redux';
 
 const initialState = {
   count: 0,
 };
-
-const enhancer =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const reducer = (state = initialState, action) => {
   if (action.type === 'counter/inc') {
@@ -20,6 +18,5 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-const store = createStore(reducer, enhancer);
-
-export default store;
+export const hookStore = createStore(reducer, composeWithDevTools());
+export const connectStore = createStore(reducer, composeWithDevTools());
