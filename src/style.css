@@ -55,8 +55,8 @@ body {
 }
 
 .box {
+  flex: 1;
   border: 1px solid #673ab7;
-  width: 500px;
   padding: 30px;
   display: grid;
   place-items: center;
@@ -91,4 +91,17 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 15px;
+}
+
+.splitter {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 20px;
+
+  }
 }
