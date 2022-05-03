@@ -1,4 +1,5 @@
 import { composeWithDevTools } from '@redux-devtools/extension';
+import produce from 'immer';
 import { createStore } from 'redux';
 import {
   ITEM_ADDED,
@@ -23,59 +24,43 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   if (action.type === ITEM_ADDED) {
-    return {
-      ...state,
-      items: [
-        ...state.items,
-        {
-          id: uuid++,
-          quantity: 1,
-          ...action.payload,
-        },
-      ],
-    };
+    return produce(state, (draftState) => {
+      draftState.items.push({
+        id: uuid++,
+        quantity: 1,
+        ...action.payload,
+      });
+    });
   }
 
   if (action.type === ITEM_PRICE_UPDATED) {
-    return {
-      ...state,
-      items: state.items.map((item) => {
-        if (item.id === action.payload.id) {
-          return {
-            ...item,
-            price: +action.payload.price,
-          };
-        }
-        return item;
-      }),
-    };
+    return produce(state, (draftState) => {
+      const item = draftState.items.find(
+        (item) => item.id === action.payload.id
+      );
+      item.price = action.payload.price;
+    });
   }
   if (action.type === ITEM_QUANTITY_UPDATED) {
-    return {
-      ...state,
-      items: state.items.map((item) => {
-        if (item.id === action.payload.id) {
-          return {
-            ...item,
-            quantity: +action.payload.quantity,
-          };
-        }
-        return item;
-      }),
-    };
+    return produce(state, (draftState) => {
+      const item = draftState.items.find(
+        (item) => item.id === action.payload.id
+      );
+      item.quantity = action.payload.quantity;
+    });
   }
   if (action.type === TIP_PERCENTAGE_UPDATED) {
-    return {
-      ...state,
-      tipPercentage: +action.payload,
-    };
+    return produce(state, (draftState) => {
+      draftState.tipPercentage = action.payload;
+    });
   }
 
   if (action.type === ITEM_REMOVED) {
-    return {
-      ...state,
-      items: state.items.filter((item) => item.id !== action.payload.id),
-    };
+    return produce(state, (draftState) => {
+      draftState.items = draftState.items.filter(
+        (item) => item.id !== action.payload.id
+      );
+    });
   }
 
   return state;
