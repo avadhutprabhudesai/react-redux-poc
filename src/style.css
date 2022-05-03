@@ -49,7 +49,7 @@ body {
 }
 
 .content {
-  padding: 40px;
+  padding: 30px 10px;
   display: grid;
   place-items: center;
 }
@@ -97,6 +97,65 @@ body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+.reselect {
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 40px;
+  justify-self: stretch;
+}
+
+.reselect .items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reselect .menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reselect .menu-item h2 {
+  margin-bottom: 0;
+}
+
+.reselect .menu-item .edit {
+  display: flex;
+  gap: 20px;
+}
+
+.reselect .menu-item .info {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reselect .tip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reselect .bill {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: baseline;
+  grid-gap: 10px;
+}
+
+.reselect .label {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.reselect .amount {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 600px) {
