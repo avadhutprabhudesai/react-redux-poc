@@ -185,6 +185,31 @@ body {
   align-items: center;
 }
 
+.rtk-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.humans,
+.tasks {
+  flex: 1;
+}
+
+.tasks__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.tasks__info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+
 @media screen and (max-width: 600px) {
   .content {
     padding: 20px;
