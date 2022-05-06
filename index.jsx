@@ -6,6 +6,7 @@ import Reselect from './src/reselect/Reselect';
 import 'semantic-ui-css/semantic.min.css';
 import Immer from './src/immer/Immer';
 import ReduxToolkit from './src/redux-toolkit/ReduxToolkit';
+import Thunk from './src/thunk/Thunk';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route path="reselect" element={<Reselect />}></Route>
         <Route path="immer" element={<Immer />}></Route>
         <Route path="rtk" element={<ReduxToolkit />}></Route>
+        <Route path="thunk" element={<Thunk />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>,

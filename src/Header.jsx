@@ -17,6 +17,9 @@ export default function Header() {
         <li>
           <Link to="rtk">Redux Toolkit</Link>
         </li>
+        <li>
+          <Link to="thunk">Thunk</Link>
+        </li>
       </ul>
     </div>
   );
