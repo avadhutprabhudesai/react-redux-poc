@@ -7,6 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 import Immer from './src/immer/Immer';
 import ReduxToolkit from './src/redux-toolkit/ReduxToolkit';
 import Thunk from './src/thunk/Thunk';
+import ReduxSaga from './src/redux-saga/ReduxSaga';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="immer" element={<Immer />}></Route>
         <Route path="rtk" element={<ReduxToolkit />}></Route>
         <Route path="thunk" element={<Thunk />}></Route>
+        <Route path="saga" element={<ReduxSaga />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>,
