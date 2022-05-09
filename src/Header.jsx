@@ -20,6 +20,9 @@ export default function Header() {
         <li>
           <Link to="thunk">Thunk</Link>
         </li>
+        <li>
+          <Link to="saga">Redux Saga</Link>
+        </li>
       </ul>
     </div>
   );
